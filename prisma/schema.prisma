@@ -12,7 +12,7 @@ datasource db {
 
 model Redirection {
   id Int @id @default(autoincrement())
-  code String @unique
+  urlCode String @unique
   url String
   name String?
   description String?
