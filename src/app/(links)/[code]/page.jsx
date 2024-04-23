@@ -5,18 +5,20 @@ import React from "react";
 const MOCK_DATA = ["link-1", "link-2"];
 
 const RedirectPage = async ({ params }) => {
-  const { code } = params || "";
-  console.log(code)
+    const { code } = params || "";
+    console.log(code);
 
-  const redirection = await prisma.redirection.findUnique({where:{code}})
+    const redirection = await prisma.redirection.findUnique({
+        where: { code },
+    });
 
-  if (redirection) {
-    redirect(redirection.url);
-  }
+    if (redirection) {
+        redirect(redirection.url);
+    }
 
-  // notFound()
+    // notFound()
 
-  return <div>{code}:  Not found</div>;
+    return <div>{code}: Not found</div>;
 };
 
 export default RedirectPage;
