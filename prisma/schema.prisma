@@ -10,10 +10,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String @unique
+  email    String @unique
+  password String
+}
+
 model Redirection {
-  id Int @id @default(autoincrement())
-  urlCode String @unique
-  url String
-  name String?
+  id          Int     @id @default(autoincrement())
+  urlCode     String  @unique
+  url         String
+  name        String?
   description String?
 }
