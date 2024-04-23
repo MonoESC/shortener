@@ -14,4 +14,6 @@ model Redirection {
   id Int @id @default(autoincrement())
   code String @unique
   url String
+  name String?
+  description String?
 }
